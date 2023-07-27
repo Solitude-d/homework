@@ -23,6 +23,7 @@ func DeleteSliceV2(slice []int, idx int) (res []int, err error) {
 	return res, nil
 }
 
+//DeleteSliceV3 泛型版本
 func DeleteSliceV3[T Number](slice []T, idx int) (res []T, err error) {
 	if idx < 0 || idx > len(slice) {
 		return res, errors.New("下标越界")
@@ -38,5 +39,5 @@ func DeleteSliceV3[T Number](slice []T, idx int) (res []T, err error) {
 
 type Number interface {
 	~int | ~int16 | ~int8 | ~int32 | ~int64 |
-		~float32 | ~float64
+	~float32 | ~float64
 }
